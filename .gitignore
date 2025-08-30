@@ -1,0 +1,15 @@
+# Unity cache & temp
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+
