@@ -21,7 +21,7 @@ public class bird_movement : MonoBehaviour
         anim = GetComponent<Animator>();
 
         highest_score = PlayerPrefs.GetInt("HighestScore", 0);
-        highest_score_text.text = "En yüksek puan: " + highest_score.ToString();
+        highest_score_text.text = "Highest Score: " + highest_score.ToString();
 
         anim.SetBool("bird_can_fly", false);
         rb = GetComponent<Rigidbody2D>();
@@ -34,7 +34,7 @@ public class bird_movement : MonoBehaviour
         if (!game_started && Input.GetKeyDown(KeyCode.Space))
         {
             game_started = true;
-            rb.simulated = true; // oyun başlar, kuş fizik kurallarına girer
+            rb.simulated = true; 
             opening_scene.SetActive(false);
             game_panel.SetActive(true);
             anim.SetBool("bird_can_fly", true);
@@ -52,14 +52,14 @@ public class bird_movement : MonoBehaviour
     {
         score++;
         score_text.text = score.ToString();
-        game_over_scene_score.text = "Puanınız: " + score.ToString();
+        game_over_scene_score.text = "Score: " + score.ToString();
 
         this.GetComponent<AudioSource>().PlayOneShot(score_sound);
 
         if (score > highest_score)
         {
             highest_score = score;
-            highest_score_text.text = "En yüksek puan: " + highest_score.ToString();
+            highest_score_text.text = "Highest Score: " + highest_score.ToString();
 
             PlayerPrefs.SetInt("HighestScore", highest_score);
             PlayerPrefs.Save();
